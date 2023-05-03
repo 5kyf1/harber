@@ -1,13 +1,21 @@
 #!/bin/bash
 
+cd /tmp
 # Download the Go binary
 wget https://dl.google.com/go/go1.20.4.linux-amd64.tar.gz
 
 # Extract the Go binary to /usr/local
-sudo tar -C /usr/local -xvf go1.20.4.linux-amd64.tar.gz
+sudo tar -xvf go1.20.4.linux-amd64.tar.gz
+
+sudo rm -rf /usr/local/go/*
+
+sudo mv go /usr/local
 
 # Add Go to the PATH in .profile
-echo "export PATH=\$PATH:/usr/local/go/bin" >> $HOME/.profile
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH 
+
 
 # Reload the .profile
 source $HOME/.profile
