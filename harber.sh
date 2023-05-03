@@ -64,3 +64,51 @@ go install github.com/glebarez/cero@latest
 
 # Install ettu
 go install -v github.com/tomnomnom/hacks/ettu@latest
+
+# Install ffuf
+go install github.com/ffuf/ffuf/v2@latest
+
+# Install Python3 and pip
+sudo apt install python python3-pip git net-tools 
+
+cd /home/ship/Desktop/
+mkdir tools
+cd tools/
+
+# Installing Python Tolls
+mkdir findomain/
+cd findomain/
+curl -LO https://github.com/findomain/findomain/releases/latest/download/findomain-linux.zip
+unzip findomain-linux.zip
+chmod +x findomain
+sudo mv findomain /usr/bin/findomain
+cd ..
+
+# Indtalling ctfr
+git clone https://github.com/UnaPibaGeek/ctfr.git
+cd ctfr/
+pip3 install -r requirements.txt
+
+# Installing AD Relations
+git clone https://github.com/Josue87/AnalyticsRelationships.git
+cd AnalyticsRelationships/GO
+go build -ldflags "-s -w"
+cd ..
+
+# Installing Favocones
+git clone https://github.com/Viralmaniar/MurMurHash.git
+cd MurMurHash/
+pip3 install -r requirements.txt
+cd ..
+
+ # Installing resolver
+ git clone https://github.com/vortexau/dnsvalidator.git
+cd dnsvalidator/
+sudo python3 setup.py install
+cd ..
+
+# Install Kiter
+git clone https://github.com/assetnote/kiterunner.git
+cd kiterunner/
+sudo ln -s $(pwd)/dist/kr /usr/local/bin/kr
+cd ..
