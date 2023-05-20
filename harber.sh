@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Install Python
+sudo apt update
+sudo apt install python3 pip
+
 cd /tmp
 # Download the Go binary
 wget https://dl.google.com/go/go1.20.4.linux-amd64.tar.gz
